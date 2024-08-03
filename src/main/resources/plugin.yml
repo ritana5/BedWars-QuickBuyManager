@@ -1,0 +1,9 @@
+name: BedWars-QuickBuyManager
+description: An addon for BedWars that adds a better quickbuy system.
+version: '${project.version}'
+author: ritana5
+main: net.ritana5.qbm.QuickBuyManager
+api-version: "1.13"
+softdepend:
+  - BedWars1058
+  - BedWars2023
