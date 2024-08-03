@@ -34,12 +34,6 @@ public class BedWars1058 {
 
     public void initConfig(File file) {
         YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
-        JavaPlugin.getPlugin(QuickBuyManager.class).groups = config.getStringList("arena-groups").stream().map(String::toLowerCase).collect(Collectors.toList());
-    }
-
-
-    public static boolean isMode(IArena arena) {
-        return JavaPlugin.getPlugin(QuickBuyManager.class).groups.contains(arena.getGroup().toLowerCase());
     }
 
 
@@ -64,10 +58,9 @@ public class BedWars1058 {
 
         Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
         QuickBuyManager.bw1058Api = Bukkit.getServicesManager().getRegistration(com.andrei1058.bedwars.api.BedWars.class).getProvider();
-        JavaPlugin.getPlugin(QuickBuyManager.class).placeSound = QuickBuyManager.bw1058Api.getForCurrentVersion("STEP_WOOL", "BLOCK_CLOTH_STEP", "BLOCK_CLOTH_STEP");
         JavaPlugin.getPlugin(QuickBuyManager.class).initConfig(configFile);
         JavaPlugin.getPlugin(QuickBuyManager.class).getServer().getPluginManager().registerEvents(new BedWarsListener(), JavaPlugin.getPlugin(QuickBuyManager.class));
-        Bukkit.getConsoleSender().sendMessage("[BedWars1058] " + color("The BedWars-Voidless addon was originally contributed to by Kiiya and Zuyte."));
+        Bukkit.getConsoleSender().sendMessage("[BedWars1058] " + color("The BedWars-QuickBuyManager addon was originally contributed to by ritana5."));
         Utils.info("&4B&ce&6d&eW&aa&9r&5s&d-&1V&2o&1i&2d&1l&2e&1s&2s");
         QuickBuyManager.log.info("Plugin Version: " + JavaPlugin.getPlugin(QuickBuyManager.class).getDescription().getVersion());
         if (!(JavaPlugin.getPlugin(QuickBuyManager.class).getDescription().getVersion().equals("1.0-SNAPSHOT"))) {
@@ -76,6 +69,6 @@ public class BedWars1058 {
             QuickBuyManager.log.info(("You are running on the latest release!"));
         }
         QuickBuyManager.log.info("Server Version: " + JavaPlugin.getPlugin(QuickBuyManager.class).getServer().getVersion() + "\n");
-        Utils.info("Running on: &fBedWars&c1058");
+        Utils.info("Running on: &6BedWars&c1058");
     }
 }
